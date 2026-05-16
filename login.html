@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background: linear-gradient(to right, #36d1dc, #5b86e5);
+        }
+
+        .container{
+            width:350px;
+            margin:100px auto;
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        input{
+            width:90%;
+            padding:12px;
+            margin:10px;
+            border-radius:8px;
+            border:1px solid #ccc;
+        }
+
+        button{
+            padding:12px 20px;
+            background:#007bff;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        .error{
+            color:red;
+            margin-bottom:10px;
+        }
+
+        a{
+            display:block;
+            margin-top:15px;
+            text-decoration:none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>🔐 Student Login</h2>
+
+    {% if error %}
+        <div class="error">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <form method="POST">
+
+        <input type="text"
+               name="username"
+               placeholder="Enter Username"
+               required>
+
+        <input type="password"
+               name="password"
+               placeholder="Enter Password"
+               required>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <a href="/register">Create New Account</a>
+
+</div>
+
+</body>
+</html>
